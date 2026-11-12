@@ -1,0 +1,32 @@
+name: Node.js CI
+# Trigger the workflow when code is pushed
+# or when a Pull Request is created
+on:
+  push:
+  pull_request:
+jobs:
+  test:
+    # GitHub provides an Ubuntu virtual machine
+    runs-on: ubuntu-latest
+    steps:
+      # 1. Checkout source code
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      # 2. Setup Node.js
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      # 3. Install dependencies
+      - name: Install dependencies
+        run: npm ci
+      # 4. Static code analysis
+      - name: Run ESLint
+        run: npm run lint
+      # 5. Execute unit tests and generate coverage
+      - name: Run Jest tests
+        run: npm test -- --coverage
+      # 6. Build application
+      - name: Build application
+        run: npm run build

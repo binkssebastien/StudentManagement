@@ -1,0 +1,30 @@
+{
+  "name": "studentmanagement",
+  "version": "1.0.0",
+  "description": "Student Management System",
+  "main": "._student.js",
+  "scripts": {
+    "test": "jest",
+    "lint": "eslint student.js student.test.js",
+    "build": "esbuild student.js --bundle --platform=node --outfile=dist/student.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/binkssebastien/StudentManagement.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/binkssebastien/StudentManagement/issues"
+  },
+  "homepage": "https://github.com/binkssebastien/StudentManagement#readme",
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "esbuild": "^0.28.2",
+    "eslint": "^10.14.0",
+    "globals": "^17.14.0",
+    "jest": "^30.5.2"
+  }
+}

@@ -4,18 +4,14 @@ class Student {
         this.name = name;
         this.course = course;
     }
-
+    
     displayDetails() {
-        console.log("Student ID: " + this.id);
-        console.log("Student Name: " + this.name);
-        console.log("Course: " + this.course);
+        return `ID: ${this.id}, Name: ${this.name}, Course: ${this.course}`;
+    }
+
+    getStudentName() {
+        return this.name;
     }
 }
 
-const student1 = new Student(
-    101,
-    "John",
-    "Computer Science"
-);
-
-student1.displayDetails();
+module.exports = Student;
